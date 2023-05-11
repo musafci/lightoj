@@ -1,5 +1,7 @@
 // Problem: https://lightoj.com/problem/dimik-even-odd-2
 
+// Solution #01:
+
 #include <iostream>
 #include <string>
 using namespace std;
@@ -20,5 +22,28 @@ int main() {
         }
     }
 
+    return 0;
+}
+
+// Solution #02:
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    int T;
+    string N;
+    cin >> T;
+
+    for (int i = 0; i < T; i++) {        
+        cin >> N;
+
+        if (N[N.length() - 1] % 2 == 0) {
+            cout << "even" << "\n";
+        } else {
+            cout << "odd" << "\n";
+        }
+    }
     return 0;
 }
