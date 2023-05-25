@@ -22,3 +22,25 @@ int main() {
 
     return 0;
 }
+
+
+// Soution #02: Solution in C
+
+#include <stdio.h>
+
+int main() {
+    int T;
+    scanf("%d", &T);
+
+    while (T--) {
+        int r1, r2, B;
+        scanf("%d %d %d", &r1, &r2, &B);
+
+        double current_run_rate = (double)r2 / ((300 - B) / 6.0);
+        double required_run_rate = (double)(r1 - r2 + 1) / (B / 6.0);
+
+        printf("%.2f %.2f\n", current_run_rate, required_run_rate);
+    }
+
+    return 0;
+}
