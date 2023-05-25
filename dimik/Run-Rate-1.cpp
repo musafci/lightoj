@@ -2,20 +2,23 @@
 
 // Solution #01:
 #include <iostream>
+#include <iomanip>
+
 using namespace std;
 
 int main() {
-    int t, r1, r2, b, ball_played;
-    double current_run_rate, required_run_rate;
-    cin >> t;
+    int T;
+    cin >> T;
 
-    for (int i = 0; i < t; i++)
-    {
-        cin >> r1 >> r2 >> b;
-        ball_played = 300 - b;
-        current_run_rate = (r2 / ball_played) * 6;
-        required_run_rate = ((r1 - r2 + 1) / b) * 6;
+    while (T--) {
+        int r1, r2, B;
+        cin >> r1 >> r2 >> B;
 
-        cout << current_run_rate << " " << required_run_rate;
-    }    
+        double current_run_rate = static_cast<double>(r2) / (300 - B) * 6;
+        double required_run_rate = static_cast<double>(r1 - r2 + 1) / B * 6;
+
+        cout << fixed << setprecision(2) << current_run_rate << " " << required_run_rate << endl;
+    }
+
+    return 0;
 }
